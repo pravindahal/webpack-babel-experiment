@@ -96,7 +96,7 @@
      * http://www.wtfpl.net/ for more details. */
 
 
-const leftPad = (str, len, ch) => {
+var leftPad = function leftPad(str, len, ch) {
   if (ch === false) {
     ch = ' ';
   }
@@ -104,34 +104,35 @@ const leftPad = (str, len, ch) => {
     str = str.toString();
   }
   return str.padStart(len, ch);
-}
+};
 
 module.exports = leftPad;
-
 
 /***/ }),
 /* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
-const leftPad = __webpack_require__(0)
+"use strict";
 
-const join = (l, glue) => {
-  return l.reduce((glued, item) => {
+
+var leftPad = __webpack_require__(0);
+
+var join = function join(l, glue) {
+  return l.reduce(function (glued, item) {
     return glued + glue + item;
   }, '');
-}
+};
 
-const component = () => {
+var component = function component() {
   var element = document.createElement('pre');
 
   // Lodash, now imported
   element.innerHTML = join(['Hello', leftPad('webpack', 10)], ' ');
 
   return element;
-}
+};
 
 document.body.appendChild(component());
-
 
 /***/ })
 /******/ ]);
