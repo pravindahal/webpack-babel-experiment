@@ -1,4 +1,4 @@
-const leftPad = require('left-pad')
+const leftPad = require('left-pad-es6')
 
 const join = (l, glue) => {
   return l.reduce((glued, item) => {
